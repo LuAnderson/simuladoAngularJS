@@ -11,14 +11,53 @@
     <script src="js/lib/angular.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/controllers/home-controller.js"></script>
+    <script src="js/controllers/lista-controller.js"></script>
+
 
 </head>
 
 <body ng-controller="HomeController">
-    <div class="container">
-        <h1 class="text-center">{{projeto.nome}}</h1>
-        <img class="img-responsive center-block" src="{{projeto.url}}" alt="{{projeto.titulo}}">
+
+    <div class="row">
+        <div class="container col-sm-12">
+            <h1 class="text-center">{{projeto.nome}}</h1>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="container col-sm-3" ng-controller="ListaController">
+            <ul>
+                <li>Simulado 10</li>
+                <li>Simulado 9</li>
+                <li>Simulado 8</li>
+                <li>Simulado 7</li>
+                <li>Simulado 6</li>
+                <li>Simulado 5
+                    <ul>
+                        <li>Prova Final</li>
+                        <li>Prova Objetiva</li>
+                    </ul>
+                </li>
+                <li>Simulado 4</li>
+                <li>Simulado 3</li>
+                <li>Simulado 2</li>
+                <li>Simulado 1</li>
+            </ul>
+        </div>
+        <div class="container col-sm-6 texto-resumo">
+            <h2>SIMULADO 5 - PROVA OBJETIVA</h2>
+            <p>
+                Os resultados do simulado são atualizados diariamente, na medida em que os cartões-resposta e as provas discursivas vão sendo
+                são processados.
+            </p>
+            <p>
+                Através dos filtros, você poderá criar rankings personalizados, por ESPECIALIDADE, TURMA(Curso) e UNIDADE (Cidade).
+            </p>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
 </body>
 
 </html>
