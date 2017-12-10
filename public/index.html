@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Simulado - MedGrupo</title>
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
@@ -27,6 +28,7 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="container col-sm-3" ng-controller="ListaController">
+            <h2>Simulados de 2008</h2>
             <ul>
                 <li>Simulado 10</li>
                 <li>Simulado 9</li>
@@ -35,8 +37,10 @@
                 <li>Simulado 6</li>
                 <li>Simulado 5
                     <ul>
-                        <li>Prova Final</li>
-                        <li>Prova Objetiva</li>
+                        <li>
+                            <b>Prova objetiva</b>
+                        </li>
+                        <li>Prova final</li>
                     </ul>
                 </li>
                 <li>Simulado 4</li>
@@ -54,10 +58,41 @@
             <p>
                 Através dos filtros, você poderá criar rankings personalizados, por ESPECIALIDADE, TURMA(Curso) e UNIDADE (Cidade).
             </p>
+            <form class="menuBusca jumbotron jumbotron-fluid">
+                <p>
+                    <label for="matricula">Encontre com sua matricula:</label>
+                    <input type="text" name="buscaMatricula" value="">
+                    <button class="btn btn-default btn-small">procurar</button>
+                </p>
+            </form>
+            <div>
+                <p>
+                    Filtrar por:
+                </p>
+                <div class="seletores">
+                    <select>
+                        <option value="especialidade-todas">Especialidade - TODAS</option>
+                        <option value="clínica-médica">CLÍNICA MÉDICA</option>
+                        <option value="ciurgia-geral">CIURGIA GERAL</option>
+                        <option value="clínica-médica">CLÍNICA MÉDICA</option>
+                    </select>
+                    <select>
+                        <option value="especialidade-todas">Filiais - TODAS</option>
+                        <option value="clínica-médica">MEDCURSO SALVADOR</option>
+                        <option value="ciurgia-geral">MEMEDCURSO SÃO PAULO</option>
+                        <option value="clínica-médica">MEDCURSO RIO DE JANEIRO</option>
+                    </select>
+                    <select>
+                        <option value="especialidade-todas">Turmas - TODAS</option>
+                        <option value="clínica-médica">MED SALVADOR</option>
+                        <option value="ciurgia-geral">MED SÃO PAULO</option>
+                        <option value="clínica-médica">MED RIO DE JANEIRO</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="col-sm-2"></div>
     </div>
-
 </body>
 
 </html>

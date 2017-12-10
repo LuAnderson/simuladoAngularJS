@@ -1,0 +1,10 @@
+form.menuBusca.jumbotron.jumbotron-fluid.ng-pristine.ng-valid {
+    padding: 15px;
+    vertical-align: middle;
+    text-align: center;
+    padding-bottom: 1px;
+}
+
+.seletores select{
+    margin-left: 3em;
+}
