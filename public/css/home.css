@@ -5,6 +5,24 @@ form.menuBusca.jumbotron.jumbotron-fluid.ng-pristine.ng-valid {
     padding-bottom: 1px;
 }
 
+form.menu-tabela{
+    padding: 15px;
+    vertical-align: middle;
+    padding-bottom: 1px;
+}
+
+#opcoes-tabela{
+    margin-top: 5em;
+}
+
 .seletores select{
     margin-left: 3em;
+}
+
+.compartilhamento{
+    display: inline-flex;
+}
+
+a:link {
+    color: black; 
 }

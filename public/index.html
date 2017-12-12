@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="js/lib/angular.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/controllers/home-controller.js"></script>
@@ -19,13 +21,13 @@
 
 <body ng-controller="HomeController">
 
-    <div class="row">
+    <section id="titulo" class="row">
         <div class="container col-sm-12">
             <h1 class="text-center">{{projeto.nome}}</h1>
         </div>
-    </div>
+    </section>
 
-    <div class="row">
+    <section id="informativo" class="row">
         <div class="col-sm-1"></div>
         <div class="container col-sm-3" ng-controller="ListaController">
             <h2>Simulados de 2008</h2>
@@ -92,7 +94,44 @@
             </div>
         </div>
         <div class="col-sm-2"></div>
-    </div>
+    </section>
+
+    <section id="opcoes-tabela" class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-3 compartilhamento">
+            <a href="url">imprimir</a>
+            <p>|</p>
+            <a href="url">enviar para um amigo</a>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+            foram encontrados ***** registos
+        </div>
+        <div class="col-sm-1"></div>
+    </section>
+
+    <section class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <form class="menu-tabela jumbotron jumbotron-fluid ng-pristine ng-valid">
+                *** ao ***
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-triangle-left"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-triangle-right"></span>
+                </button>
+                ir para:
+                <input type="text" name="ir-para"> mostrar:
+                <select>
+                    <option value="especialidade-todas">todos</option>
+                    <option value="especialidade-todas">nenhum</option>
+                </select>
+            </form>
+        </div>
+        <div class="col-sm-1"></div>
+    </section>
 </body>
 
 </html>
