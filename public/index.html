@@ -27,6 +27,15 @@
         </div>
     </section>
 
+    <section class="row">
+        <div class="container col-sm-1"></div>
+        <div class="container col-sm-1">
+            <button id="zoom" class="btn btn-xs">A+</button>
+            <button id="zoom" class="btn btn-xs">A-</button>
+        </div>
+        <div class="container col-sm-10"></div>
+    </section>
+
     <section id="informativo" class="row">
         <div class="col-sm-1"></div>
         <div class="container col-sm-3" ng-controller="ListaController">
@@ -75,20 +84,23 @@
                     <select>
                         <option value="especialidade-todas">Especialidade - TODAS</option>
                         <option value="clínica-médica">CLÍNICA MÉDICA</option>
-                        <option value="ciurgia-geral">CIURGIA GERAL</option>
-                        <option value="clínica-médica">CLÍNICA MÉDICA</option>
+                        <option value="ciurgia-geral">CLÍNICA GERAL</option>
+                        <option value="clínica-médica">CIRURGIA MÉDICA</option>
+                        <option value="clínica-médica">CIRURGIA GERAL</option>
                     </select>
                     <select>
                         <option value="especialidade-todas">Filiais - TODAS</option>
                         <option value="clínica-médica">MEDCURSO SALVADOR</option>
                         <option value="ciurgia-geral">MEMEDCURSO SÃO PAULO</option>
                         <option value="clínica-médica">MEDCURSO RIO DE JANEIRO</option>
+                        <option value="clínica-médica">MEDCURSO RECIFE</option>
                     </select>
                     <select>
                         <option value="especialidade-todas">Turmas - TODAS</option>
                         <option value="clínica-médica">MED SALVADOR</option>
                         <option value="ciurgia-geral">MED SÃO PAULO</option>
                         <option value="clínica-médica">MED RIO DE JANEIRO</option>
+                        <option value="clínica-médica">MED PERNAMBUCO</option>
                     </select>
                 </div>
             </div>
@@ -128,6 +140,7 @@
                     <option value="especialidade-todas">todos</option>
                     <option value="especialidade-todas">nenhum</option>
                 </select>
+                <a class="right" href="url"><span class="glyphicon">&#xe026;</span> baixar planinha completa</a>
             </form>
         </div>
         <div class="col-sm-1"></div>

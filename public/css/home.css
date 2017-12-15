@@ -26,3 +26,13 @@ form.menu-tabela{
 a:link {
     color: black; 
 }
+
+.right{
+    display: inline-block;
+    margin-left: 40%;
+}
+
+#zoom{
+    background-color: black;
+    color: white;
+}
