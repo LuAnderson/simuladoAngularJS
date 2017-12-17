@@ -16,7 +16,6 @@
     <script src="js/controllers/home-controller.js"></script>
     <script src="js/controllers/lista-controller.js"></script>
 
-
 </head>
 
 <body ng-controller="HomeController">
@@ -39,25 +38,14 @@
     <section id="informativo" class="row">
         <div class="col-sm-1"></div>
         <div class="container col-sm-3" ng-controller="ListaController">
-            <h2>Simulados de 2008</h2>
+            <h2>{{lista.titulo}}</h2>
             <ul>
-                <li>Simulado 10</li>
-                <li>Simulado 9</li>
-                <li>Simulado 8</li>
-                <li>Simulado 7</li>
-                <li>Simulado 6</li>
-                <li>Simulado 5
-                    <ul>
-                        <li>
-                            <b>Prova objetiva</b>
-                        </li>
-                        <li>Prova final</li>
-                    </ul>
+                <li ng-repeat="opcao in opcoes">
+                    {{opcao.titulo}}
+                    <!-- <ul>
+                        <li>{{opcao.subtitulo}}</li>
+                    </ul> -->
                 </li>
-                <li>Simulado 4</li>
-                <li>Simulado 3</li>
-                <li>Simulado 2</li>
-                <li>Simulado 1</li>
             </ul>
         </div>
         <div class="container col-sm-6 texto-resumo">
