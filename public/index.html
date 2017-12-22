@@ -42,9 +42,13 @@
             <ul>
                 <li ng-repeat="opcao in opcoes">
                     {{opcao.titulo}}
-                    <!-- <ul>
-                        <li>{{opcao.subtitulo}}</li>
-                    </ul> -->
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <ul>
+                        <li ng-repeat="subopcao in subopcoes">{{subopcao.subtitulo}}</li>
+                    </ul>   
                 </li>
             </ul>
         </div>
