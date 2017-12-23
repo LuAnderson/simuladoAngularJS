@@ -1,0 +1,46 @@
+form.menuBusca.jumbotron.jumbotron-fluid.ng-pristine.ng-valid {
+    padding: 15px;
+    vertical-align: middle;
+    text-align: center;
+    padding-bottom: 1px;
+}
+
+form.menu-tabela{
+    padding: 15px;
+    vertical-align: middle;
+    padding-bottom: 1px;
+}
+
+#opcoes-tabela{
+    margin-top: 5em;
+}
+
+.seletores select{
+    margin-left: 3em;
+}
+
+.compartilhamento{
+    display: inline-flex;
+}
+
+a:link {
+    color: black; 
+}
+
+.right{
+    display: inline-block;
+    margin-left: 40%;
+}
+
+#zoom{
+    background-color: black;
+    color: white;
+}
+
+thead{
+    background: #e8e8e8;
+}
+
+th{
+    border-right: 2px solid white;
+}

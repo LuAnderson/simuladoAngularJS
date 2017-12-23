@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="simulado">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Simulado - MedGrupo</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/home-controller.js"></script>
+    <script src="js/controllers/lista-controller.js"></script>
+
+</head>
+
+<body ng-controller="HomeController">
+
+    <section id="titulo" class="row">
+        <div class="container col-sm-12">
+            <h1 class="text-center">{{projeto.nome}}</h1>
+        </div>
+    </section>
+
+    <section class="row">
+        <div class="container col-sm-1"></div>
+        <div class="container col-sm-1">
+            <button id="zoom" class="btn btn-xs">A+</button>
+            <button id="zoom" class="btn btn-xs">A-</button>
+        </div>
+        <div class="container col-sm-10"></div>
+    </section>
+
+    <section id="informativo" class="row">
+        <div class="col-sm-1"></div>
+        <div class="container col-sm-3" ng-controller="ListaController">
+            <h2>{{lista.titulo}}</h2>
+            <ul>
+                <li ng-repeat="opcao in opcoes">
+                    {{opcao.titulo}}
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <ul>
+                        <li ng-repeat="subopcao in subopcoes">{{subopcao.subtitulo}}</li>
+                    </ul>   
+                </li>
+            </ul>
+        </div>
+        <div class="container col-sm-6 texto-resumo">
+            <h2>SIMULADO 5 - PROVA OBJETIVA</h2>
+            <p>
+                Os resultados do simulado são atualizados diariamente, na medida em que os cartões-resposta e as provas discursivas vão sendo
+                são processados.
+            </p>
+            <p>
+                Através dos filtros, você poderá criar rankings personalizados, por ESPECIALIDADE, TURMA(Curso) e UNIDADE (Cidade).
+            </p>
+            <form class="menuBusca jumbotron jumbotron-fluid">
+                <p>
+                    <label for="matricula">Encontre com sua matricula:</label>
+                    <input type="text" name="buscaMatricula" value="">
+                    <button class="btn btn-default btn-small">procurar</button>
+                </p>
+            </form>
+            <div>
+                <p>
+                    Filtrar por:
+                </p>
+                <div class="seletores">
+                    <select>
+                        <option value="especialidade-todas">Especialidade - TODAS</option>
+                        <option value="clínica-médica">CLÍNICA MÉDICA</option>
+                        <option value="ciurgia-geral">CLÍNICA GERAL</option>
+                        <option value="clínica-médica">CIRURGIA MÉDICA</option>
+                        <option value="clínica-médica">CIRURGIA GERAL</option>
+                    </select>
+                    <select>
+                        <option value="especialidade-todas">Filiais - TODAS</option>
+                        <option value="clínica-médica">MEDCURSO SALVADOR</option>
+                        <option value="ciurgia-geral">MEMEDCURSO SÃO PAULO</option>
+                        <option value="clínica-médica">MEDCURSO RIO DE JANEIRO</option>
+                        <option value="clínica-médica">MEDCURSO RECIFE</option>
+                    </select>
+                    <select>
+                        <option value="especialidade-todas">Turmas - TODAS</option>
+                        <option value="clínica-médica">MED SALVADOR</option>
+                        <option value="ciurgia-geral">MED SÃO PAULO</option>
+                        <option value="clínica-médica">MED RIO DE JANEIRO</option>
+                        <option value="clínica-médica">MED PERNAMBUCO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </section>
+
+    <section id="opcoes-tabela" class="row">
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-3 compartilhamento">
+            <a href="url">imprimir</a>
+            <p>|</p>
+            <a href="url">enviar para um amigo</a>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+            foram encontrados ***** registos
+        </div>
+        <div class="col-sm-1"></div>
+    </section>
+
+    <section class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <form class="menu-tabela jumbotron jumbotron-fluid ng-pristine ng-valid">
+                *** ao ***
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-triangle-left"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-triangle-right"></span>
+                </button>
+                ir para:
+                <input type="text" name="ir-para"> mostrar:
+                <select>
+                    <option value="especialidade-todas">todos</option>
+                    <option value="especialidade-todas">nenhum</option>
+                </select>
+                <a class="right" href="url">
+                    <span class="glyphicon">&#xe026;</span> baixar planinha completa</a>
+            </form>
+        </div>
+        <div class="col-sm-1"></div>
+    </section>
+
+    <section class="row">
+        <div class="col-sm-1"></div>
+        <div class="table-responsive col-sm-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>POSIÇÃO</th>
+                        <th>NOTA</th>
+                        <th>MATRÍCULA</th>
+                        <th>ESPECIALIDADE</th>
+                        <th>TURMA</th>
+                        <th>FILIAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-1"></div>
+    </section>
+</body>
+
+</html>
