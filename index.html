@@ -15,6 +15,7 @@
     <script src="js/main.js"></script>
     <script src="js/controllers/home-controller.js"></script>
     <script src="js/controllers/lista-controller.js"></script>
+    <script src="js/controllers/filtro-controller.js"></script>
 
 </head>
 
@@ -48,7 +49,7 @@
                 <li>
                     <ul>
                         <li ng-repeat="subopcao in subopcoes">{{subopcao.subtitulo}}</li>
-                    </ul>   
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -72,27 +73,15 @@
                 <p>
                     Filtrar por:
                 </p>
-                <div class="seletores">
+                <div class="seletores" ng-controller="FiltroController">
                     <select>
-                        <option value="especialidade-todas">Especialidade - TODAS</option>
-                        <option value="clínica-médica">CLÍNICA MÉDICA</option>
-                        <option value="ciurgia-geral">CLÍNICA GERAL</option>
-                        <option value="clínica-médica">CIRURGIA MÉDICA</option>
-                        <option value="clínica-médica">CIRURGIA GERAL</option>
+                        <option ng-repeat="especialidade in especialidades" value="{{especialidades.value}}">{{especialidade.especialidade}}</option>
                     </select>
                     <select>
-                        <option value="especialidade-todas">Filiais - TODAS</option>
-                        <option value="clínica-médica">MEDCURSO SALVADOR</option>
-                        <option value="ciurgia-geral">MEMEDCURSO SÃO PAULO</option>
-                        <option value="clínica-médica">MEDCURSO RIO DE JANEIRO</option>
-                        <option value="clínica-médica">MEDCURSO RECIFE</option>
+                        <option ng-repeat="filial in filiais" value="{{filiais.value}}">{{filial.filial}}</option>
                     </select>
                     <select>
-                        <option value="especialidade-todas">Turmas - TODAS</option>
-                        <option value="clínica-médica">MED SALVADOR</option>
-                        <option value="ciurgia-geral">MED SÃO PAULO</option>
-                        <option value="clínica-médica">MED RIO DE JANEIRO</option>
-                        <option value="clínica-médica">MED PERNAMBUCO</option>
+                        <option ng-repeat="turma in turmas" value="{{turmas.value}}">{{turma.turma}}</option>
                     </select>
                 </div>
             </div>
