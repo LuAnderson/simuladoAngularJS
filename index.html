@@ -64,7 +64,7 @@
             <form class="menuBusca jumbotron jumbotron-fluid">
                 <p>
                     <label for="matricula">Encontre com sua matricula:</label>
-                    <input type="text" name="buscaMatricula" value="">
+                    <input ng-model="filtroImput" type="text" name="buscaMatricula" value="">
                     <button class="btn btn-default btn-small">procurar</button>
                 </p>
             </form>
@@ -100,8 +100,8 @@
             <a href="url">enviar para um amigo</a>
         </div>
         <div class="col-sm-4"></div>
-        <div class="col-sm-3">
-            foram encontrados ***** registos
+        <div class="col-sm-3" ng-controller="ResultadoController">
+            foram encontrados {{tabela.length}} registos
         </div>
         <div class="col-sm-1"></div>
     </section>
@@ -136,15 +136,10 @@
             <table class="table" ng-controller="ResultadoController">
                 <thead>
                     <tr>
-                        <th data-ng-click="clickOrden('posicao')">POSIÇÃO</th>
-                        <th data-ng-click="clickOrden('nota')">NOTA</th>
-                        <th data-ng-click="clickOrden('matricula')">MATRÍCULA</th>
-                        <th data-ng-click="clickOrden('especialidade')">ESPECIALIDADE</th>
-                        <th data-ng-click="clickOrden('turma')">TURMA</th>
-                        <th data-ng-click="clickOrden('filial')">FILIAL</th>
+                        <th ng-repeat="category in category" ng-click="orderByMe(category.name)">{{category.name}}</th>
                     </tr>
                 </thead>
-                <tbody class="resultados" ng-repeat="tabelas in tabela | orderBy: 'especialidade' ">
+                <tbody class="resultados" ng-repeat="tabelas in tabela | orderBy:myOrderBy | filter : filtroImput">
                     <tr>
                         <th>{{tabelas.posicao}}</th>
                         <th>{{tabelas.nota}}</th>

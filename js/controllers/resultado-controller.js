@@ -6,6 +6,52 @@ angular.module('simulado').controller('ResultadoController', function ($scope) {
         resultado(value);
     }
 
+    $scope.orderByMe = function (value) {
+        switch (value) {
+            case "POSIÇÃO":
+                $scope.myOrderBy = "posicao";
+                break;
+            case "NOTA":
+                $scope.myOrderBy = "nota";
+                break;
+            case "MATRÍCULA":
+                $scope.myOrderBy = "matricula";
+                break;
+            case "ESPECIALIDADE":
+                $scope.myOrderBy = "especialidade";
+                break;
+            case "TURMA":
+                $scope.myOrderBy = "turma";
+                break;
+            case "FILIAL":
+                $scope.myOrderBy = "filial";
+                break;
+            default:
+                console.log("Error, result category not found");
+        }
+    }
+
+    $scope.category = [
+        {
+            name: "POSIÇÃO"
+        },
+        {
+            name: "NOTA"
+        },
+        {
+            name: "MATRÍCULA"
+        },
+        {
+            name: "ESPECIALIDADE"
+        },
+        {
+            name: "TURMA"
+        },
+        {
+            name: "FILIAL"
+        }
+    ]
+
     $scope.tabela = [
         {
             posicao: "1º",
@@ -56,6 +102,7 @@ angular.module('simulado').controller('ResultadoController', function ($scope) {
             filial: "MEDCURSO RECIFE"
         }
     ]
+
 
 })
 

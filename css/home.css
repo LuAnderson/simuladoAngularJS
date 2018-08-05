@@ -1,4 +1,5 @@
-form.menuBusca.jumbotron.jumbotron-fluid.ng-pristine.ng-valid {
+form.menuBusca.jumbotron.jumbotron-fluid.ng-pristine.ng-valid,
+form.menuBusca.jumbotron.jumbotron-fluid.ng-valid.ng-dirty.ng-valid-parse {
     padding: 15px;
     vertical-align: middle;
     text-align: center;
