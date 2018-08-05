@@ -6,7 +6,7 @@ angular.module('simulado').controller('ListaController', function ($scope) {
     $scope.opcoes = [
         {
             titulo: "Simulado 10",
-            ativo: false,
+            ativo: false
         },
         {
             titulo: "Simulado 9",

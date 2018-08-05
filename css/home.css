@@ -32,15 +32,27 @@ a:link {
     margin-left: 40%;
 }
 
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
 #zoom{
     background-color: black;
     color: white;
 }
 
 thead{
-    background: #e8e8e8;
+    background: #ededed;
+    cursor: pointer;
 }
 
 th{
     border-right: 2px solid white;
+}
+
+.resultados tr th:nth-child(2),
+.resultados tr th:nth-child(4),
+.resultados tr th:nth-child(6) {
+  background: #fafafa;
 }

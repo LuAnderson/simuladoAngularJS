@@ -16,6 +16,7 @@
     <script src="js/controllers/home-controller.js"></script>
     <script src="js/controllers/lista-controller.js"></script>
     <script src="js/controllers/filtro-controller.js"></script>
+    <script src="js/controllers/resultado-controller.js"></script>
 
 </head>
 
@@ -46,13 +47,10 @@
                 </li>
             </ul>
             <ul>
-                <li>
-                    <ul>
-                        <li ng-repeat="subopcao in subopcoes">{{subopcao.subtitulo}}</li>
-                    </ul>
-                </li>
+                <li ng-repeat="subopcao in subopcoes">{{subopcao.subtitulo}}</li>
             </ul>
         </div>
+
         <div class="container col-sm-6 texto-resumo">
             <h2>SIMULADO 5 - PROVA OBJETIVA</h2>
             <p>
@@ -62,6 +60,7 @@
             <p>
                 Através dos filtros, você poderá criar rankings personalizados, por ESPECIALIDADE, TURMA(Curso) e UNIDADE (Cidade).
             </p>
+
             <form class="menuBusca jumbotron jumbotron-fluid">
                 <p>
                     <label for="matricula">Encontre com sua matricula:</label>
@@ -69,6 +68,7 @@
                     <button class="btn btn-default btn-small">procurar</button>
                 </p>
             </form>
+
             <div>
                 <p>
                     Filtrar por:
@@ -85,7 +85,9 @@
                     </select>
                 </div>
             </div>
+
         </div>
+
         <div class="col-sm-2"></div>
     </section>
 
@@ -131,24 +133,34 @@
     <section class="row">
         <div class="col-sm-1"></div>
         <div class="table-responsive col-sm-10">
-            <table class="table">
+            <table class="table" ng-controller="ResultadoController">
                 <thead>
                     <tr>
-                        <th>POSIÇÃO</th>
-                        <th>NOTA</th>
-                        <th>MATRÍCULA</th>
-                        <th>ESPECIALIDADE</th>
-                        <th>TURMA</th>
-                        <th>FILIAL</th>
+                        <th data-ng-click="clickOrden('posicao')">POSIÇÃO</th>
+                        <th data-ng-click="clickOrden('nota')">NOTA</th>
+                        <th data-ng-click="clickOrden('matricula')">MATRÍCULA</th>
+                        <th data-ng-click="clickOrden('especialidade')">ESPECIALIDADE</th>
+                        <th data-ng-click="clickOrden('turma')">TURMA</th>
+                        <th data-ng-click="clickOrden('filial')">FILIAL</th>
                     </tr>
                 </thead>
-                <tbody>
-
+                <tbody class="resultados" ng-repeat="tabelas in tabela | orderBy: 'especialidade' ">
+                    <tr>
+                        <th>{{tabelas.posicao}}</th>
+                        <th>{{tabelas.nota}}</th>
+                        <th>{{tabelas.matricula}}</th>
+                        <th>{{tabelas.especialidade}}</th>
+                        <th>{{tabelas.turma}}</th>
+                        <th>{{tabelas.filial}}</th>
+                    </tr>
                 </tbody>
             </table>
         </div>
         <div class="col-sm-1"></div>
     </section>
+
+
+    <script src="js/funcionalidades.js"></script>
 </body>
 
 </html>
