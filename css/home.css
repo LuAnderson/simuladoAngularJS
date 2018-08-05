@@ -57,3 +57,37 @@ th{
 .resultados tr th:nth-child(6) {
   background: #fafafa;
 }
+
+.lightbox {
+	display: none;
+
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+}
+
+.lightbox p {
+    font-size: 6em;
+    text-align: center;
+    padding: 5em;   
+    color: white;
+    text-decoration: none;
+}
+
+.lightbox:target {
+	outline: none;
+
+	display: block;
+}
+
+a:hover,
+a:link,
+a:visited,
+a{
+    color: black;
+}
