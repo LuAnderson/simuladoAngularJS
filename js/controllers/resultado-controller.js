@@ -1,7 +1,5 @@
 angular.module('simulado').controller('ResultadoController', function ($scope) {
 
-    $scope.clickOrden = null;
-
     $scope.clickOrden = function (value) {
         resultado(value);
     }

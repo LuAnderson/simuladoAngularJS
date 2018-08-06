@@ -88,6 +88,11 @@ th{
 a:hover,
 a:link,
 a:visited,
+a:active,
 a{
-    color: black;
+    color: black !important;
+}
+
+#opcoes-tabela a{
+    cursor: pointer;
 }
