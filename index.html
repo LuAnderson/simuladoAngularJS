@@ -20,7 +20,7 @@
 
 </head>
 
-<body ng-controller="HomeController">
+<body id="allBody" ng-controller="HomeController">
 
     <section id="titulo" class="row">
         <div class="container col-sm-12">
@@ -31,8 +31,8 @@
     <section class="row">
         <div class="container col-sm-1"></div>
         <div class="container col-sm-1">
-            <button id="zoom" class="btn btn-xs">A+</button>
-            <button id="zoom" class="btn btn-xs">A-</button>
+            <button onclick="addZoom()" id="zoom" class="btn btn-xs">A+</button>
+            <button onclick="removeZoom()" id="zoom" class="btn btn-xs">A-</button>
         </div>
         <div class="container col-sm-10"></div>
     </section>
