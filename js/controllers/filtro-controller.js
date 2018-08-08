@@ -9,7 +9,7 @@ angular.module('simulado').controller('FiltroController', function ($scope) {
             value: "clínica-médica"
         },
         {
-            especialidade: "CLINICA GÉRAL",
+            especialidade: "CLINICA GERAL",
             value: "clínica-geral"
         },
         {

@@ -4,6 +4,11 @@ angular.module('simulado').controller('ResultadoController', function ($scope) {
         resultado(value);
     }
 
+    $scope.viewtabela = 7;
+    $scope.tamanhoFinal = 7;  // limitTo
+    $scope.tamanhoInicial = 1; // limitTo
+    $scope.paginaAtual = 1;
+
     $scope.orderByMe = function (value) {
         switch (value) {
             case "POSIÇÃO":
@@ -98,9 +103,111 @@ angular.module('simulado').controller('ResultadoController', function ($scope) {
             especialidade: "CIRURGIA GERAL",
             turma: "MED PERNAMBUCO",
             filial: "MEDCURSO RECIFE"
+        },
+        {
+            posicao: "5º",
+            nota: "37",
+            matricula: "655845",
+            especialidade: "CLINICA GERAL",
+            turma: "MED SALVADOR",
+            filial: "MEDCURSO SALVADOR"
+        },
+        {
+            posicao: "6º",
+            nota: "30",
+            matricula: "516154",
+            especialidade: "CLINICA MÉDICA",
+            turma: "MED PERNAMBUCO",
+            filial: "MEDCURSO RECIFE"
+        },
+        {
+            posicao: "6º",
+            nota: "30",
+            matricula: "145222",
+            especialidade: "CIRURGIA GERAL",
+            turma: "MED RIO DE JANEIRO",
+            filial: "MEDCURSO RIO DE JANEIRO"
+        },
+        {
+            posicao: "7º",
+            nota: "23",
+            matricula: "564221",
+            especialidade: "CLINICA MÉDICA",
+            turma: "MED RIO DE JANEIRO",
+            filial: "MEDCURSO RIO DE JANEIRO"
+        },
+        {
+            posicao: "8º",
+            nota: "22",
+            matricula: "462254",
+            especialidade: "CIRURGIA MÉDICA",
+            turma: "MED PERNAMBUCO",
+            filial: "MEDCURSO RECIFE"
+        },
+        {
+            posicao: "8º",
+            nota: "22",
+            matricula: "462254",
+            especialidade: "CLINICA GERAL",
+            turma: "MED SÃO PAULO",
+            filial: "MEDCURSO RECIFE"
+        },
+        {
+            posicao: "9º",
+            nota: "21",
+            matricula: "554621",
+            especialidade: "CLINICA MÉDICA",
+            turma: "MED PERNAMBUCO",
+            filial: "MEDCURSO RECIFE"
+        }
+        ,
+        {
+            posicao: "9º",
+            nota: "21",
+            matricula: "65854",
+            especialidade: "CIRURGIA GERAL",
+            turma: "MED PERNAMBUCO",
+            filial: "MEDCURSO RECIFE"
         }
     ]
 
+    $scope.quantidadePaginas = $scope.tabela.length;
+    $scope.quantidadePaginas = $scope.quantidadePaginas / $scope.viewtabela;
 
+    $scope.loadMorePage = function () {
+        if ($scope.quantidadePaginas > $scope.paginaAtual) {
+            $scope.paginaAtual = $scope.paginaAtual + 1;
+        }
+
+        $scope.tamanhoInicial = $scope.tamanhoFinal;
+        $scope.tamanhoFinal = $scope.tamanhoFinal + 7;
+        console.log("tamanhoInicial:  ", $scope.tamanhoInicial);
+        console.log("tamanhoFinal:  ", $scope.tamanhoFinal);
+    };
+
+    $scope.loadLessPage = function () {
+        if ($scope.quantidadePaginas <= $scope.paginaAtual) {
+            $scope.paginaAtual = $scope.paginaAtual - 1;
+        }
+
+        if ($scope.tamanhoInicial > 0) {
+
+            if ($scope.tamanhoFinal != 7 && $scope.tamanhoInicial != 0) {
+                $scope.tamanhoInicial = $scope.tamanhoInicial - $scope.viewtabela;
+                $scope.tamanhoFinal = $scope.tamanhoFinal - 7;
+            }
+
+            if ($scope.tamanhoFinal == 7 && $scope.tamanhoInicial == 0) {
+                $scope.tamanhoFinal = 7;
+                $scope.tamanhoInicial = 1;
+            }
+        }
+
+        if ($scope.tamanhoInicial == 1) {
+            $scope.tamanhoInicial = 1;
+        }
+
+        console.log("tamanhoInicial:  ", $scope.tamanhoInicial);
+        console.log("tamanhoFinal:  ", $scope.tamanhoFinal);
+    };
 })
-

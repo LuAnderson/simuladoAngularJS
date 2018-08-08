@@ -115,13 +115,13 @@
 
     <section class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+        <div class="col-sm-10" ng-controller="ResultadoController">
             <form class="menu-tabela jumbotron jumbotron-fluid ng-pristine ng-valid">
-                *** ao ***
-                <button type="button" class="btn btn-default btn-sm">
+                {{paginaAtual}} ao {{quantidadePaginas}}
+                <button type="button" class="btn btn-default btn-sm" ng-click="loadLessPage()">
                     <span class="glyphicon glyphicon-triangle-left"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-sm">
+                <button type="button" class="btn btn-default btn-sm" ng-click="loadMorePage()">
                     <span class="glyphicon glyphicon-triangle-right"></span>
                 </button>
                 ir para:
@@ -147,7 +147,7 @@
                         <th ng-repeat="category in category" ng-click="orderByMe(category.name)">{{category.name}}</th>
                     </tr>
                 </thead>
-                <tbody class="resultados" ng-repeat="tabelas in tabela | orderBy:myOrderBy | filter : filtroImput">
+                <tbody class="resultados" ng-repeat="tabelas in tabela | orderBy:myOrderBy | limitTo : tamanhoFinal : tamanhoInicial | filter : filtroImput">
                     <tr>
                         <th>{{tabelas.posicao}}</th>
                         <th>{{tabelas.nota}}</th>
